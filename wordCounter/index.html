@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter</title>
+</head>
+<body>
+  <h1>Word Counter</h1>
+  Word: <textarea placeholder="Enter a word" id="textData"></textarea>
+    <p>Count: <span id="count">0</span></p>
+
+    <script>
+      const text = document.getElementById("textData");
+      const count = document.getElementById("count");
+      text.addEventListener('input',()=>{
+        // doesnot count the space (split)
+        const words =text.value.trim().split(/\s+/)
+        count.textContent=text.value.trim===""?0:words.length;
+      })
+    </script>
+</body>
+</html>
