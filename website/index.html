@@ -4,27 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Products</h1>
   <div id="outputRes" class="mainClass"></div>
-  <script>
-    fetch("https://fakestoreapi.com/products")
-    .then((res)=>res.json())
-    .then((data)=>{
-    const  box=document.getElementById("outputRes")
-      data.forEach((item)=>{
-        box.innerHTML+=`<div class="product">
-          <img src="${item.image}"/>
-          <div class="product-title">${item.title}</div>
-          <div class="product-price">${item.price}</div>
-          <div class="product-description">${item.description}</div>
-          <div class="product-rate>">${product.rating.rate}</div>
-          <div class="product-rate>">${product.rating.count}</div>
-          </div>
-          `
-      })
-    })
+  <script src="script.js">
+
   </script>
 </body>
 </html>
