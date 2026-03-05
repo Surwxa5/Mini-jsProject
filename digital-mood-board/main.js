@@ -1,22 +1,29 @@
-const mood_board=document.getElementById('mood-board')
-const Morning=document.getElementById('morning')
-const Midnight=document.getElementById('midnight')
-const Party=document.getElementById('party')
+const moodBoard=document.getElementById('mood-board')
 const text = document.getElementById('text')
 
+const partyColors=['#ff0fff',"#00ffff","#ff4500",'#32cd32']
 
-const moodDisplay=(Mood)=>{
+const updateMood=(mood)=>{
   
-if(Mood===Morning){
-  console.log(text.textContent="Wake up!")
-  console.log(mood_board.style.backgroundColor='lightblue')
+if(mood==='morning'){
+  text.textContent="Wake up!"
+  moodBoard.style.backgroundColor='lightblue'
 }
-else if(Mood===Midnight){
-  console.log(text.textContent="Sleep tight,")
-  console.log(mood_board.style.backgroundColor='navy')
-  console.log(mood_board.style.color='white')
+else if(mood==='midnight'){
+  text.textContent="Sleep tight,"
+  moodBoard.style.backgroundColor='navy'
+  moodBoard.style.color='white'
 }
+ else if (mood==='party')
+ {
+  text.textContent='Dance!'
+  for(let i=0;i<partyColors.length;i++){
+ let randomColor=partyColors[Math.floor(Math.random()*partyColors.length)]
+ moodBoard.style.backgroundColor=randomColor
+  }
+ }
 
 }
-Morning.addEventListener("click",moodDisplay)
-Midnight.addEventListener("click",moodDisplay)
+document.getElementById('morning').addEventListener("click",()=>updateMood("morning"))
+document.getElementById('midnight').addEventListener("click",()=>updateMood("midnight"))
+document.getElementById('party').addEventListener("click",()=>updateMood("party"))
