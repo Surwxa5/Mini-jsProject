@@ -27,3 +27,4 @@ else if(mood==='midnight'){
 document.getElementById('morning').addEventListener("click",()=>updateMood("morning"))
 document.getElementById('midnight').addEventListener("click",()=>updateMood("midnight"))
 document.getElementById('party').addEventListener("click",()=>updateMood("party"))
+ 
