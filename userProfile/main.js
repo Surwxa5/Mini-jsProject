@@ -1,18 +1,30 @@
-const user={
-  name:'Code Learner',
-  bio:'Current Status:Beginner',
-  Level:1
-}
-const levelupButton=document.getElementById('level-up-btn')
-const userLevel=document.getElementById('user-level')
-const Card=document.getElementById('Card')
-const bio=document.getElementById("user-bio")
-const userProfile=(level)=>{
-  
-  if(user.Level>=5){
-  bio.textContent="Current Status:Pro Developer"
-  Card.style.border="Gold"
+const user = {
+  name: 'Code Learner',
+  bio: 'Current Status: Beginner',
+  level: 1 
+};
 
+// Select your elements
+const levelupButton = document.getElementById('level-up-btn');
+const userLevelSpan = document.getElementById('user-level');
+const bioText = document.getElementById("user-bio");
+const profileCard = document.getElementById('profile-card'); 
+
+const handleLevelUp = () => {
+  
+  user.level++; 
+
+  // Update the UI (The HTML)
+  userLevelSpan.textContent = user.level;
+
+  // Check the condition
+  if (user.level >= 5) {
+    user.bio = "Pro Developer";
+    bioText.textContent = `Current Status: ${user.bio}`;
+    profileCard.style.borderColor = "gold";
+    profileCard.style.borderWidth = "5px";
   }
-}
-levelupButton.addEventListener("click",userLevel.level+1)
+};
+
+// 2. Attach the function to the click
+levelupButton.addEventListener("click", handleLevelUp);
