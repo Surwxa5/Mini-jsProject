@@ -14,9 +14,9 @@ const inventory=[
   }
 ]
 const list = document.getElementById("item_list")
-list.innerHTML=''
-const displayInventory=()=>{
 
+const displayInventory=()=>{
+list.innerHTML=''
 // using the foreach loop in array for better efficiency
 inventory.forEach((item)=>{
   // creating a element in js to append in html
