@@ -13,22 +13,28 @@ const Inventory=[
   }
 ]
 
-const list = document.getElementById('item-list')
-const inputText=document.getElementById("input-text")
+const list = document.getElementById('item-list');
+const budgetInput = document.getElementById("input-text"); // Renamed for clarity
 
-const displayItem = ()=>{
-list.innerHTML= ''
-Inventory.forEach((item)=>{
-const inputText = Inventory.filter(item=>item.price<5)
+const displayItem = () => {
+  list.innerHTML = ''; // Clear the old list
+  
+  // 1. Get the number the user typed
+  const userBudget = Number(budgetInput.value);
 
-if(inputText===0){
-  inputText.textContent='"You cant afford anything!"'
-}
- const newItem=document.createElement('li')
- newItem.textContent=`item:${item.name} price:${item.price}`
+  
+  const affordableItems = Inventory.filter(item => item.price <= userBudget);
 
- list.appendChild(newItem)
- 
-})
-}
-document.getElementById('showItem').addEventListener("click",displayItem)
+
+  if (affordableItems.length === 0) {
+    list.innerHTML = "<li>You can't afford anything!</li>";
+    return; 
+  }
+  affordableItems.forEach((item) => {
+    const newItem = document.createElement('li');
+    newItem.textContent = `Item: ${item.name} | Price: $${item.price}`;
+    list.appendChild(newItem);
+  });
+};
+
+document.getElementById('showItem').addEventListener("click", displayItem)
