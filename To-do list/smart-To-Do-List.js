@@ -1,5 +1,12 @@
-taskList = []
+let taskList = []; // Your storage box
 
+const addTask = (taskObject) => {
+
+  taskList.push(taskObject); 
+  
+
+
+}
 
 const userInput = document.getElementById('user-input-task')
 const Task = document.getElementById('task')
@@ -34,9 +41,13 @@ else{
   newText.appendChild(removeButton)
   Task.appendChild(newText)
 
+
+
  }
 }
 document.getElementById("addTask-btn").addEventListener("click",displayTask)
+
+
 
 
 
