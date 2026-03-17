@@ -40,6 +40,8 @@ taskList.forEach((task)=>{
   newText.appendChild(removeButton)
   Task.appendChild(newText)
 
+  // will do it tomorrow 
+
 
 
 })
@@ -52,7 +54,7 @@ const deleteTask = (id) => {
   // Re-draw the list
   renderTasks();
 };
-document.getElementById("addTask-btn").addEventListener("click",displayTask)
+document.getElementById("addTask-btn").addEventListener("click",renderTasks)
 
 
 
