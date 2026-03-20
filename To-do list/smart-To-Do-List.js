@@ -37,7 +37,7 @@ const renderTasks = () => {
     removeButton.addEventListener("click", () => {
       deleteTask(Task.id)
     })
-    // no way 
+  
 
     removeButton.style.marginLeft = "10px"
     removeButton.style.color = 'red'
