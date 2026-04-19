@@ -15,7 +15,6 @@ const addTask = () => {
   taskList.push(taskObject);
   renderTasks()
   userInput.value = ""
-
 }
 
 
